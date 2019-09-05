@@ -9,3 +9,9 @@ find . -maxdepth 2 -type f -name "*.csproj" -printf '%f\n' | xargs -I % sh -c 'g
 ```
 
 `xargs -I` instruct the shell to execute each argument alone (in one line) here I am using the **%** as a placeholder
+
+# Add multiple project to the solution in one command
+
+```sh
+find . -type f -name "*.csproj" | xargs dotnet sln add
+```
